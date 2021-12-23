@@ -1,18 +1,28 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <vue-writer :array="['Welcome to CONFYDE']" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import VueWriter from 'vue-writer';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
+    VueWriter,
   },
 };
 </script>
+<style lang="scss">
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .is-typed span.typed {
+    color: wheat;
+    font-size: 2rem;
+  }
+}
+</style>
