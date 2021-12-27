@@ -20,6 +20,7 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #000;
   .is-typed span.typed {
     color: wheat;
     font-size: 2rem;
