@@ -1,12 +1,12 @@
 <template>
   <div>
     <label :for="id" class="block text-sm mb-2 text-[#7A7A7A] capitalize">{{ label }}</label>
-    <input
-      :id="id"
-      :type="inputType"
-      :placeholder="placeholder"
-      class="w-full rounded-md bg-[#F2F2F2] border-0 py-5"
-    />
+    <select :id="id" class="w-full rounded-md bg-[#F2F2F2] border-0 py-5">
+      <option disabled value="" selected>{{ placeholder }}</option>
+      <option v-for="selectFieldOption in selectFieldOptions" :key="selectFieldOption">
+        {{ selectFieldOption }}
+      </option>
+    </select>
   </div>
 </template>
 <script>
@@ -18,12 +18,7 @@ export default {
       type: String,
       required: true,
     },
-    inputType: {
-      validator(value) {
-        // The value must match one of these strings
-        return ['text', 'tel', 'email', 'password', 'date'].includes(value);
-      },
-    },
+
     label: {
       type: String,
       default: '',
@@ -31,6 +26,10 @@ export default {
     placeholder: {
       type: String,
       default: '',
+    },
+    selectFieldOptions: {
+      type: Array,
+      default: () => [],
     },
   },
 };
