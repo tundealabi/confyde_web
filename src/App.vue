@@ -1,7 +1,11 @@
 <template>
-  <div id="nav">
-    <router-link to="/login">Login</router-link> |
+  <div id="nav" class="flex items-center py-4 space-x-4">
+    <router-link to="/">
+      <img src="./assets/confyde_logo.svg" alt="logo" class="w-12 h-12" />
+    </router-link>
+    <router-link to="/login">Login</router-link>
     <router-link to="/register">Register</router-link>
+    <router-link to="/report">Report</router-link>
   </div>
   <router-view />
 </template>
@@ -14,8 +18,6 @@
 }
 
 #nav {
-  padding: 20px 30px;
-
   a {
     font-weight: bold;
     color: #2c3e50;
